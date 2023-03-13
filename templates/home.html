@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="container">
-        <h1 class="text-center mt-2 mb-4"> Welcome to Mohsen Dehhaghi webpage! </h1>
+        <h1 class="text-center mt-2 mb-4"> Welcome to {{name}} webpage! </h1>
       <img class="img-fluid" id="banner" src="https://mohsen-web.mohsendehhaghi.repl.co/static/systemdesign.jpg" alt="System Design">
       <h2 class="text-center mt-2 mb-4"> About Me </h2>
       <p class="lead">
@@ -34,11 +34,14 @@
   ✅ Strong engineering professional with two Master's degrees in Computer Science and Electrical Engineering both from University of Southern California along with conducting research and completing advanced studies at Stanford University.
       </p>
       <h2 class="text-center mt-2 mb-4"> Skillsets & Languages & Experience </h2>
-      <p> Python </p>
-      <p> Java </p>
-      <p> C++ </p>
+      <div> 
+        {% for exp in exps %}
+          {% include 'expitem.html' %}
+        {% endfor %}
+      </div>
+      
       <div class="text-center">
-        <button class="btn btn-primary btn-lg"> Contact Me </button>
+        <button class="btn btn-primary btn-lg mt-4"> Contact Me </button>
         <p class="mt-4"> Copyright 2023, Mohsen Dehhaghi</p>
       </div>
       <link rel="icon"
