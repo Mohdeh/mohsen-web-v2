@@ -10,29 +10,41 @@
         width: 100%;
         height: 500px;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
     <div class="container">
         <h1 class="text-center mt-2 mb-4"> Welcome to {{name}} webpage! </h1>
       <img class="img-fluid" id="banner" src="https://mohsen-web.mohsendehhaghi.repl.co/static/systemdesign.jpg" alt="System Design">
       <h2 class="text-center mt-2 mb-4"> About Me </h2>
-      <p class="lead">
-        ✅ Experienced Software & Hardware Engineer with a demonstrated record of working in diverse spectra of high-tech research & development industries. 
-      </p>
-      <p class="lead">
-  ✅ Conducting interdisciplinary work at the intersection of HPC & AI (QML) with emphasis on developing and implementing deep learning solutions. 
-      </p>
-      <p class="lead">
-  ✅ Leading research on emerging quantum machine learning (QML) techniques as an eventual complement to the cutting-edge suite of analytics solutions (AI, HPC, NLP, Machine Learning, Deep Learning). 
-      </p>
-      <p class="lead">
-  ✅ Skilled in Software & Hardware Developments, Quantum Computing, Big Data Analytics, Database Systems, AI, Deep Learning, Machine Learning, NLP, Java, Python, MapReduce, Object-Oriented Programming (OOP), and Very-Large-Scale Integration (VLSI). 
-      </p>
-      <p class="lead">
-  ✅ Strong engineering professional with two Master's degrees in Computer Science and Electrical Engineering both from University of Southern California along with conducting research and completing advanced studies at Stanford University.
-      </p>
+      
+      <div class="row" style="margin-bottom:16px;">
+        <div class="col-md-6">
+          <p class="lead">
+            ✅ Experienced Software & Hardware Engineer with a demonstrated record of working in diverse spectra of high-tech research & development industries. 
+          </p>
+          <p class="lead">
+      ✅ Conducting interdisciplinary work at the intersection of HPC & AI (QML) with emphasis on developing and implementing deep learning solutions. 
+          </p>
+          <p class="lead">
+      ✅ Leading research on emerging quantum machine learning (QML) techniques as an eventual complement to the cutting-edge suite of analytics solutions (AI, HPC, NLP, Machine Learning, Deep Learning). 
+          </p>
+          <p class="lead">
+      ✅ Skilled in Software & Hardware Developments, Quantum Computing, Big Data Analytics, Database Systems, AI, Deep Learning, Machine Learning, NLP, Java, Python, MapReduce, Object-Oriented Programming (OOP), and Very-Large-Scale Integration (VLSI). 
+          </p>
+          <p class="lead">
+      ✅ Strong engineering professional with two Master's degrees in Computer Science and Electrical Engineering both from University of Southern California along with conducting research and completing advanced studies at Stanford University.
+          </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+          <img src="/static/sw-salad.jpeg" alt="Software Salad" 
+            style="height: 500px; width: 500px; border-radius:16px;">
+        </div>
+      </div>
+      
       <h2 class="text-center mt-2 mb-4"> Professional Experience </h2>
       <div> 
         {% for exp in exps %}
@@ -42,11 +54,11 @@
       
       <div class="text-center">
         <button class="btn btn-primary btn-lg mt-4"> Contact Me </button>
-        <p class="mt-4"> Copyright 2023, Mohsen Dehhaghi</p>
+        
       </div>
-      <link rel="icon"
-        type="image/ico"
-        href="static/favicon.ico">
-      </div>
+      
+      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </div>
+    {% include 'footer.html' %}
   </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, url_for
 
 app = Flask(__name__)
 
@@ -42,6 +42,11 @@ def hello_world():
 @app.route("/api/experiences")
 def list_experiences():
   return jsonify(EXPERIENCES)
+
+# Load Browser Favorite Icon
+@app.route('/favicon.ico')
+def favicon():
+    return url_for('static', filename='favicon.ico')
 
 # print(__name__)
 if __name__ == "__main__":
