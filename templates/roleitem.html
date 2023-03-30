@@ -1,0 +1,18 @@
+<div class="border-bottom row" style="margin-bottom: 16px; padding-bottom: 8px;">
+  <div class="col-10">
+    <h4 style="color:rgb(120, 120, 120); margin-bottom:4px;"> 
+      {{role['company']}} 
+    </h4>
+    <div> 
+      <b>Headquarters:</b> {{role['headquarters']}} 
+    </div>
+    {% if 'revenue' in role %}
+      <div> 
+        <b>Revenue:</b> {{role['revenue']}} 
+      </div>
+    {% endif %}
+   </div> 
+  <div class="col-2">
+    <a href="mailto:dehhaghi@alumni.usc.edu?subject=Role%20Details%20for%20{{role['company']}}&body=My%20name%3A%20%3Cname%3E%0D%0A%0D%0AMy%20resume%3A%20%3Cresume%3E%0D%0A%0D%0AMy%20LinkedIn%3A%20%3Clinkedin%20profile%3E" type="button" class="btn btn-outline-primary"> Details </a>
+  </div>
+</div>
