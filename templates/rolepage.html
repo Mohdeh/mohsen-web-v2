@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> {{role.company}} -- Mohsen Dehhaghi Webpage </title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4"> Welcome to {{name}} webpage! </h1>
+      {% include 'banner.html' %}
+      <h3 class="mb-2"> {{role.company}} </h3>
+      <p class="lead mt-0"> {{role.headquarters}} </p>
+      
+      <h4> Revenue </h4>
+      <p> {{role.currency}} {{role.revenue}} </p>
+      <h4> Responsibilities </h4>
+      <ul>
+        {% for line in role.responsibilities.split("\r") %}
+          <li> {{line}} </li>
+        {% endfor %}
+      </ul>
+      <h4> Skillsets </h4>
+      <ul>
+        {% for line in role.skillsets.split("\r") %}
+          <li> {{line}} </li>
+        {% endfor %}
+      </ul>
+
+      {% include 'footer.html' %}
+    </div>    
+  </body>
+</html>
+      

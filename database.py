@@ -24,6 +24,18 @@ def load_roles_from_db():
     return roles
 
 
+def load_role_from_db(id):
+  with engine.connect() as conn:
+    result = conn.execute(
+      text(f"SELECT * FROM roles WHERE id = {id}")
+    )
+    rows = result.all()
+    if len(rows) == 0:
+      return None
+    else:
+      return rows[0]._asdict()
+
+
   
   
 
