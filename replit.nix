@@ -1,6 +1,5 @@
 { pkgs }: {
   deps = [
-    pkgs.apk-tools
     pkgs.lsof
     pkgs.python310Full
     pkgs.replitPackages.prybar-python310
