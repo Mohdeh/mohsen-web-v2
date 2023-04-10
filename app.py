@@ -1,6 +1,5 @@
-from flask import Flask, render_template, jsonify, url_for
-from database import load_roles_from_db, load_role_from_db
-
+from flask import Flask, render_template, jsonify, url_for, request
+from database import load_roles_from_db, load_role_from_db, add_inquiry_to_db
 
 
 app = Flask(__name__)
@@ -26,7 +25,22 @@ def show_role(id):
     return "Not Found", 404
   return render_template('rolepage.html', role=role, name='Mohsen Dehhaghi')
 
+@app.route("/role/<id>/inquiry", methods=['post'])
+def inquiry_about_role(id):
+  # data = request.args
+  data = request.form
+  role = load_role_from_db(id) # display and acknowledgement
   
+  add_inquiry_to_db(id, data) # store data in DB
+  
+  # send an email
+  
+
+  return render_template('inquiry.html', inquiry=data, name='Mohsen Dehhaghi',
+                        role=role)
+  # return jsonify(data)
+
+
 # Load Browser Favorite Icon
 @app.route('/favicon.ico')
 def favicon():

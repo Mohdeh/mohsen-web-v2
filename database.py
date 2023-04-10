@@ -36,6 +36,18 @@ def load_role_from_db(id):
       return rows[0]._asdict()
 
 
-  
+def add_inquiry_to_db(role_id, data):
+  with engine.connect() as conn:
+    query = text("INSERT INTO inquiries (role_id, full_name, email, linkedin, education, work_experience, resume) VALUES (:role_id, :full_name, :email, :linkedin, :education, :work_experience, :resume)")
+
+    conn.execute(query, {
+                'role_id': role_id,
+                'full_name': data['full_name'],
+                'email': data['email'],
+                'linkedin': data['linkedin'],
+                'education': data['education'],
+                'work_experience': data['work_experience'],
+                'resume': data['resume']
+    })
   
 

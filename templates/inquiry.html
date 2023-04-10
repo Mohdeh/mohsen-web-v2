@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> Inquiry Submitted </title>
+    {% include 'bootstrap.html' %}
+  </head>
+  
+  <body>
+    {% include 'nav.html' %}
+    <div class="container">
+      
+      <h1 class="text-center mt-2 mb-4"> Welcome to {{name}} webpage! </h1>
+      {% include 'banner.html' %}
+
+      <p> Your inquiry for the role of <b>{{role['company']}}</b> has been successfully submitted! </p>
+    
+    
+      <b> Full Name </b>
+      <div class="mb-2"> {{inquiry['full_name']}} </div>
+    
+      <b> Email </b>
+      <div class="mb-2"> {{inquiry['email']}} </div>
+  
+      <b> LinkedIn URL </b>
+      <div class="mb-2"> {{inquiry['linkedin']}} </div>
+  
+      <b> Education </b>
+      <div class="mb-2"> {{inquiry['education']}} </div>
+  
+      <b> Work Experience </b>
+      <div class="mb-2"> {{inquiry['work_experience']}} </div>
+  
+      <b> Resume URL </b>
+      <div class="mb-2"> {{inquiry['resume']}} </div>
+      
+    </div>
+    
+    {% include 'footer.html' %}
+  </body>
+  
+</html>
