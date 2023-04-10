@@ -25,6 +25,12 @@ def show_role(id):
     return "Not Found", 404
   return render_template('rolepage.html', role=role, name='Mohsen Dehhaghi')
 
+
+@app.route("/api/role/<id>")
+def show_role_json(id):
+  role = load_role_from_db(id)
+  return jsonify(role)
+
 @app.route("/role/<id>/inquiry", methods=['post'])
 def inquiry_about_role(id):
   # data = request.args
